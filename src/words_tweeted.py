@@ -4,7 +4,7 @@
 Creates a list of words tweeted and count the occurence
 
 Script Usage: 
-  words_tweeted.py tweet_input tweet_output
+  words_tweeted.py tweet_input tweet_output/ft1.txt
 """
 
 # import python packages
