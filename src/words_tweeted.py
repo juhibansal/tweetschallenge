@@ -38,7 +38,7 @@ def words_tweeted(dir_input,dir_output):
 			line = line.strip()
 			if not line: continue
 
-			fields = line.split()
+			fields = line.split(' ')
 
 			for x in fields:
 				if not x in dict_tweets: dict_tweets[x] = 1
