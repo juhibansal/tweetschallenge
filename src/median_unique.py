@@ -22,31 +22,36 @@ debug_print = 0
 # --------------------------------------------------
 def median_unique(dir_input,file_output):
 
+	# get all txt files in input directory
 	list_inputs=glob('%s/*.txt'%dir_input)
+	# If no txt files in input directory, exit
 	if not list_inputs: 
 		print 'Error: Directory %s has no text files. '%dir_input
 		exit (1)
+	# Open output file to write 
 	ft2out = open('%s'%file_output,'w')
 	list_tweets  = []
+	# Read each input file line by line 
 	for ifile in list_inputs:
 		for line in file(ifile):
 			line = line.strip()
 			if not line: continue
 
 			fields = line.split(' ')
+			#Get the number of unique words
 			fields = list(set(fields))
 			list_tweets.append(len(fields))
+			# Call median function to calculate median and print with maximum 2 significant digits
 			print >> ft2out, ('%.2f'%(median(list_tweets))).rstrip('0').rstrip('.')
 			continue
 	
 	return
 
+# function to calculate median
 def median(lst):
 	lst = sorted(lst)
 	lenlst = len(lst)
-	if (lenlst % 2 != 0):
-		if lenlst > 1: num = float(lst[int(lenlst/2.0)])
-		else: num = lst[0]
+	if (lenlst % 2 != 0):num = float(lst[int(lenlst/2.0)])
 	else:num = float(lst[int(lenlst/2.0)]+lst[int(lenlst/2.0)-1])/2.0
 	return num 
 ##############################
@@ -62,11 +67,14 @@ if __name__ == "__main__":
 	dir_input = argv[1]
 	file_output = argv[2]
 
+	# check if input directory exists, if not exit 
 	if not os.path.isdir(dir_input): 
 		print 'Error: Directory %s is not found. '%dir_input
 		exit (1)
 	loc = file_output.split('/')
 	dir_output = '/'.join(loc[:len(loc)-1])
+	# check if onput directory exists, if not create one 
 	if not os.path.isdir(dir_output): os.makedirs(dir_output)
 
+	# call funtion to calculate median of line 
 	median_unique(dir_input,file_output)
