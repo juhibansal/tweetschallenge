@@ -14,7 +14,6 @@ from os.path import isfile,isdir
 from pprint import pformat
 from sys import argv, exit
 from glob import glob
-
 debug_print = 0
 
 ##############################
@@ -37,11 +36,19 @@ def median_unique(dir_input,file_output):
 			fields = line.split(' ')
 			fields = list(set(fields))
 			list_tweets.append(len(fields))
-			print >> ft2out, ('%.2f'%(float(sum(list_tweets))/len(list_tweets))).rstrip('0').rstrip('.')
+			print >> ft2out, ('%.2f'%(median(list_tweets))).rstrip('0').rstrip('.')
 			continue
 	
 	return
 
+def median(lst):
+	lst = sorted(lst)
+	lenlst = len(lst)
+	if (lenlst % 2 != 0):
+		if lenlst > 1: num = float(lst[int(lenlst/2.0)])
+		else: num = lst[0]
+	else:num = float(lst[int(lenlst/2.0)]+lst[int(lenlst/2.0)-1])/2.0
+	return num 
 ##############################
 # Main
 ##############################
