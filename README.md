@@ -16,7 +16,7 @@ from pprint import pformat,
 from sys import argv, exit,
 from glob import glob
 
-Both codes look at any number of *txt files in the tweet_output folder and summarizes results under the files specified in run file. 
+Both codes look at any number of *txt files in the tweet_output folder and summarizes results under the directory specified in run file. Result filenames are hard coded to ft1.txt and ft2.txt 
 
 -----------------------------------------------------------------------
 Created by Juhi Bansal, Dated 07/08/2015
