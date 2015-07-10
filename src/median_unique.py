@@ -1,10 +1,9 @@
 # $Id: median_unique.py,v 1.3 2015/07/08 jbansal $
 
 """
-Creates a list of words tweeted and count the occurence
-
 Script Usage: 
-  median_unique.py tweet_input tweet_output/ft2.txt
+  median_unique.py tweet_input tweet_output
+######Missing some inputs##########
 """
 
 # import python packages
@@ -20,7 +19,7 @@ debug_print = 0
 # Function
 ##############################
 # --------------------------------------------------
-def median_unique(dir_input,file_output):
+def median_unique(dir_input,dir_output):
 
 	# get all txt files in input directory
 	list_inputs=glob('%s/*.txt'%dir_input)
@@ -29,7 +28,7 @@ def median_unique(dir_input,file_output):
 		print 'Error: Directory %s has no text files. '%dir_input
 		exit (1)
 	# Open output file to write 
-	ft2out = open('%s'%file_output,'w')
+	ft2out = open('%s/ft2.txt'%dir_output,'w')
 	list_tweets  = []
 	# Read each input file line by line 
 	for ifile in list_inputs:
@@ -57,24 +56,19 @@ def median(lst):
 ##############################
 # Main
 ##############################
-if __name__ == "__main__":
-
-	# read in configure info
-	if len(argv) < 2:
-		print __doc__
-		exit (1)
-
+if len(argv) < 3:
+	print __doc__
+	
+else:
 	dir_input = argv[1]
-	file_output = argv[2]
+	dir_output = argv[2]
 
 	# check if input directory exists, if not exit 
 	if not os.path.isdir(dir_input): 
 		print 'Error: Directory %s is not found. '%dir_input
 		exit (1)
-	loc = file_output.split('/')
-	dir_output = '/'.join(loc[:len(loc)-1])
 	# check if onput directory exists, if not create one 
 	if not os.path.isdir(dir_output): os.makedirs(dir_output)
 
 	# call funtion to calculate median of line 
-	median_unique(dir_input,file_output)
+	median_unique(dir_input,dir_output)
