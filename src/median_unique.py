@@ -4,7 +4,7 @@
 Creates a list of words tweeted and count the occurence
 
 Script Usage: 
-  median_unique.py tweet_input tweet_output
+  median_unique.py tweet_input tweet_output/ft2.txt
 """
 
 # import python packages
