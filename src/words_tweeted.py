@@ -37,9 +37,10 @@ def words_tweeted(dir_input,dir_output):
 		for line in file(ifile):
 			line = line.strip()
 			if not line: continue
-
+			# Split line by space
 			fields = line.split()
-
+			
+			# Create dictionary with words and number of occurences
 			for x in fields:
 				if not x in dict_tweets: dict_tweets[x] = 1
 				else: dict_tweets[x] = dict_tweets[x] + 1
