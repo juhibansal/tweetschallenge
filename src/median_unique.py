@@ -31,6 +31,7 @@ def median_unique(dir_input,dir_output):
 	ft2out = open('%s/ft2.txt'%dir_output,'w')
 	#create a dictionary to store number of unique words, number of times the same count of words has appeared
 	dict_tweets  = {}
+	dict_tweets_copy  = {}
 	# Read each input file line by line 
 	for ifile in list_inputs:
 		for line in file(ifile):
@@ -43,10 +44,14 @@ def median_unique(dir_input,dir_output):
 			#Store the word count as key and number of times the same key appear as value
 			#Keep incrementing the value of the key in the dictionary if the same count appears
 			#Storing frequency based dictionay is usedful to support of large amount of data, 
-			#since twitter can have maximum 140 characters, in worst case size of directory will never be more than 140.
+			#since twitter can have maximum 40 words, size of directory will never be more than 40.
 			#With every additional tweets only frequency will need to be incremented. Size of dictionary wont increase
 			if not len(fields) in dict_tweets: dict_tweets[len(fields)] = 1
 			else: dict_tweets[len(fields)] = dict_tweets[len(fields)] + 1
+			#Had to keep a copy of parent directory, since parent directory is getting overwritten in recursive function
+			if not len(fields) in dict_tweets_copy: dict_tweets_copy[len(fields)] = 1
+			else: dict_tweets_copy[len(fields)] = dict_tweets_copy[len(fields)] + 1
+			dict_tweets = dict_tweets_copy.copy()
 			# Call median function to calculate median and print with maximum 2 significant digits
 			print >> ft2out, ('%.2f'%(median(dict_tweets))).rstrip('0').rstrip('.')
 			continue
