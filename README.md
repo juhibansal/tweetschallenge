@@ -19,6 +19,7 @@ from glob import glob
 Both codes look at any number of *txt files in the tweet_output folder and summarizes results under the directory specified in run file. Result filenames are hard coded to ft1.txt and ft2.txt 
 
 Main features of solutions
+
 1. Total Word Count: 
 Code read each text file inside the input folder line by line and store unique word in a dictionary as a key and number of times the word appear as it value. If the same word appear again, the value is updated. Dictionary is printed at the end with left justified words (based on the maximum word length) and right justified values.
 
