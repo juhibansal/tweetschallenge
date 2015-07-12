@@ -3,7 +3,7 @@
 """
 Script Usage: 
   median_unique.py tweet_input tweet_output
-######Missing some inputs##########
+
 """
 
 # import python packages
