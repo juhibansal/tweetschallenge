@@ -3,7 +3,7 @@
 """
 Script Usage: 
   words_tweeted.py tweet_input tweet_output
-######Missing some inputs##########
+
 """
 
 # import python packages
