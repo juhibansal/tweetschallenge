@@ -29,7 +29,7 @@ Therefore a frequency based system has been used to keep an account of values in
 Algorithm:
 Code read each text file inside the input folder line by line and store count of unique word in each tweet in a dictionary as a key
 Each time the same count appears value of the key is updated (+1). 
-To calculate median first, check the first and last key for the dictionary and their values and start removing the keys from the dictionary until only 1 key or 2 keys (with value of 1 each) left. And calculate median from it
+To calculate median first, check the first and last key for the dictionary and their values and start removing the keys from the dictionary until only 1 key or 2 keys (with value of 1 each) left. And calculate median from it. Median is printed with maximum 2 significant digits and if the significant digits are 0, they are removed.
 
 -----------------------------------------------------------------------
 Created by Juhi Bansal, Dated 07/08/2015
