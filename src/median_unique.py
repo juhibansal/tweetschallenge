@@ -43,7 +43,7 @@ def median_unique(dir_input,dir_output):
 			#Store the word count as key and number of times the same key appear as value
 			#Keep incrementing the value of the key in the dictionary if the same count appears
 			#Storing frequency based dictionay is usedful to support of large amount of data, 
-			#since twitter can have maximum 40 words, size of directory will never be more than 40.
+			#since twitter can have maximum 140 characters, in worst case size of directory will never be more than 140.
 			#With every additional tweets only frequency will need to be incremented. Size of dictionary wont increase
 			if not len(fields) in dict_tweets: dict_tweets[len(fields)] = 1
 			else: dict_tweets[len(fields)] = dict_tweets[len(fields)] + 1
