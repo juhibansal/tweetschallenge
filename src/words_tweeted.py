@@ -50,6 +50,7 @@ def words_tweeted(dir_input,dir_output):
 	
 	# Sort and print the list 
 	for x in sorted(dict_tweets):
+		# List is printed with words bein left justified using length of the longest string as spacing
 		print >> ft1out, x.ljust(k+2, ) + '%5g'%dict_tweets[x] 
 	if debug_print: print pformat(dict_tweets)
 
