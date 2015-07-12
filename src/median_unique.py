@@ -37,7 +37,7 @@ def median_unique(dir_input,dir_output):
 			line = line.strip()
 			if not line: continue
 
-			fields = line.split(' ')
+			fields = line.split()
 			#Count the number of unique words from a line
 			fields = list(set(fields))
 			#Store the word count as key and number of times the same key appear as value
