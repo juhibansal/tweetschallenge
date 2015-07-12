@@ -46,8 +46,6 @@ def median_unique(dir_input,dir_output):
 			#Storing frequency based dictionay is usedful to support of large amount of data, 
 			#since twitter can have maximum 40 words, size of directory will never be more than 40.
 			#With every additional tweets only frequency will need to be incremented. Size of dictionary wont increase
-			if not len(fields) in dict_tweets: dict_tweets[len(fields)] = 1
-			else: dict_tweets[len(fields)] = dict_tweets[len(fields)] + 1
 			#Had to keep a copy of parent directory, since parent directory is getting overwritten in recursive function
 			if not len(fields) in dict_tweets_copy: dict_tweets_copy[len(fields)] = 1
 			else: dict_tweets_copy[len(fields)] = dict_tweets_copy[len(fields)] + 1
