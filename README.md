@@ -1,5 +1,5 @@
 # tweetschallenge
-This is a README for solution to Coding Challange for Insight Data Engineering:
+This is a README for solution to Coding Challange:
 
 Problem statement is to implement codes for two features:
 Calculate the total number of times each word has been tweeted.
