@@ -25,11 +25,14 @@ Code read each text file inside the input folder line by line and store unique w
 
 2. Median of unique words for each line: 
 To get the median out of a list of values, we need to have access to each values. However as the list grows, its difficult to store each value in the list. 
-Therefore a frequency based system has been used to keep an account of values in the list. Assumptions here are: word count will only be integer and since a tweet can not have more than 140 characters, the directory size will never go beyond 140.  
+Therefore a frequency based system has been used to keep an account of values in the list. Assumptions here are: word count will only be integer and since a tweet can not have more than 140 characters, So the list size will never go beyond 140.  
 Algorithm:
-Code read each text file inside the input folder line by line and store count of unique word in each tweet in a dictionary as a key
-Each time the same count appears value of the key is updated (+1). 
-To calculate median first, check the first and last key for the dictionary and their values and start removing the keys from the dictionary until only 1 key or 2 keys (with value of 1 each) left. And calculate median from it. Median is printed with maximum 2 significant digits and if the significant digits are 0, they are removed.
+Code read text file inside the input folder line by line and a list is created with list index as count of unique word in each tweet line and value of the list is number of times that count appears
+Each time the same count appears value of the list with that index is updated (+1). 
+To calculate median first, just need to sum the list, can have 2 cases:
+  listsum of list is odd: simply needs to get the index of the list when sum = listsum/2.0
+  listsum of list is even: 
+    simply needs to get the index of the list when sum = (int(listsum/2.0) and (int(listsum/2.0)+1)/2. If int(listsum/2.0) and int(listsum/2.0)+1 are at the same index, median is simply index
+    However if int(listsum/2.0) and int(listsum/2.0)+1 are at different indexes, average of 2 indexes will be the median.
 
------------------------------------------------------------------------
-Created by Juhi Bansal, Dated 07/08/2015
+Output Median is printed with maximum 2 significant digits and if the significant digits are 0, they are removed.
