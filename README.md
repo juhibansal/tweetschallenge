@@ -22,6 +22,7 @@ Main features of solutions
 
 1. Total Word Count: 
 Code read each text file inside the input folder line by line and store unique word in a dictionary as a key and number of times the word appear as it value. If the same word appear again, the value is updated. Dictionary is printed at the end with left justified words (based on the maximum word length) and right justified values.
+Sorting can be done using heapsort. However since assumption is that there are only 1000s of numbers in dictionary, ok it to use simple sort.
 
 2. Median of unique words for each line: 
 To get the median out of a list of values, we need to have access to each values. However as the list grows, its difficult to store each value in the list. 
@@ -34,5 +35,4 @@ To calculate median first, just need to sum the list, can have 2 cases:
   listsum of list is even: 
     simply needs to get the index of the list when sum = (int(listsum/2.0) and (int(listsum/2.0)+1)/2. If int(listsum/2.0) and int(listsum/2.0)+1 are at the same index, median is simply index
     However if int(listsum/2.0) and int(listsum/2.0)+1 are at different indexes, average of 2 indexes will be the median.
-
 Output Median is printed with maximum 2 significant digits and if the significant digits are 0, they are removed.
